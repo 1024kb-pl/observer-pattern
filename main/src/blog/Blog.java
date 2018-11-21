@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Blog implements Observable {
-    List<Observer> observers = new LinkedList<>();
+    List<Observer> blogSubscribers = new LinkedList<>();
     private final String blogName;
 
     public Blog(String blogName) {
@@ -16,17 +16,17 @@ public class Blog implements Observable {
 
     @Override
     public void addObserver(Observer observer) {
-        observers.add(observer);
+        blogSubscribers.add(observer);
     }
 
     @Override
     public void removeObserver(Observer observer) {
-        observers.remove(observer);
+        blogSubscribers.remove(observer);
     }
 
     @Override
     public void notifyObservers() {
-        observers.forEach(Observer::update);
+        blogSubscribers.forEach(Observer::update);
     }
 
     public void publishNewArticle(String articleName) {

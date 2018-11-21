@@ -27,14 +27,14 @@ public class BlogSubscriber implements SubscriberObserver {
     @Override
     public void sendEmailNotification() {
         if (subscriber.isEmailNotificationEnabled()) {
-            System.out.println(String.format(RESULT_INFORMATION, NotificationTags.EMAIL, subscriber.getEmail(), amountUnreadArticles));
+            System.out.println(String.format(RESULT_INFORMATION, NotificationTags.EMAIL, subscriber.getName(), amountUnreadArticles));
         }
     }
 
     @Override
     public void sendSmsNotification() {
         if (subscriber.isSmsNotificationEnabled()) {
-            System.out.println(String.format(RESULT_INFORMATION, NotificationTags.SMS, subscriber.getPhoneNumber(), amountUnreadArticles));
+            System.out.println(String.format(RESULT_INFORMATION, NotificationTags.SMS, subscriber.getName(), amountUnreadArticles));
         }
     }
 }
